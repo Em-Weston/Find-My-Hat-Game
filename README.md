@@ -52,10 +52,9 @@ Once node is intalled on your computer, and the files are downloaded, you are re
 Project Status: *In Progress* 
 
 As I work through my project, I will add my to-do's below: 
-* The user should be prompted for an input when they run the game. The input should be taken and should result as either a move, a win or the end of the game. 
-* I need a method to accept user input, and save the location that player wants to move to in a variable. 
-* Then the new location needs to be tested, is it a win, a loose(fall down the hole), out-of-bounds. Then the field needs to be updated. 
-* I also need to create a method that handles, looping through the game. 
+* I need to fully test all fail results. If the user steps off the board in any direction, I need to add the functionality to result in a loose. 
+* I need a method to generate a random field. This is going to accept a height and width input.  
+
 
 
 If I come accross imporvements, or future updates, I will add them below: 

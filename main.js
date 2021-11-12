@@ -62,13 +62,28 @@ class Field {
       console.log('That is not a valid command. Choose U,D,L,R or End.');
     }
   }
+  updateCurrentLocation() {
+    let currentPosition = this.field[x][y];
+    console.log(`This is the current position of array item: ${currentPosition}`);
+    if (currentPosition === fieldCharacter) {
+      console.log('This is a field character space');
+      return this.field[x][y] = pathCharacter;
+    } else if (currentPosition === hole) {
+      console.log('You fell down a hole!')
+      console.log('Game Over!!');
+      return endGame = true;
+    } else if (currentPosition === hat) {
+      console.log('CONGRATULATIONS! YOU WON!!'); 
+      return endGame = true;
+    }
+  }
   winOrLose() {
     do {
       myField.print();
       userChoice = prompt('Which Way?');
       // console.log(userchoice);
       myField.acceptingUserInput();
-
+      myField.updateCurrentLocation();
     }
     while (endGame === false);
   }
