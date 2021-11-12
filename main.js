@@ -6,10 +6,12 @@ const hat = '^';
 const hole = 'O';
 const fieldCharacter = '░';
 const pathCharacter = '*';
+let endGame = false;
 let userChoice;
 let directionInput;
 let newPoint;
-let endGame = false;
+let x = 0;
+let y = 0;
 
 class Field {
   constructor(theField){
@@ -22,14 +24,14 @@ class Field {
     }
   }
   acceptingUserInput() {
-    console.log(userChoice);
+    // console.log(userChoice);
     directionInput = userChoice.toLowerCase(); 
     newPoint = this.field[x][y];
-    console.log(directionInput);
-    console.log(x, y);
+    // console.log(directionInput);
+    // console.log(x, y);
     if(directionInput === 'd') {
       x++;
-      console.log(x);
+      // console.log(x);
       newPoint = this.field[x][y];
       return newPoint, x, y;
     } else if (directionInput === 'r') {
@@ -37,7 +39,7 @@ class Field {
       return x,y;
     } else if (directionInput === 'u') {
       x--;
-      console.log(`x is: ${x}`);
+      // console.log(`x is: ${x}`);
       if (x<= -1) {
         console.log('Oops, you fell off the game field.');
         console.log('Game over!')
@@ -60,6 +62,16 @@ class Field {
       console.log('That is not a valid command. Choose U,D,L,R or End.');
     }
   }
+  winOrLose() {
+    do {
+      myField.print();
+      userChoice = prompt('Which Way?');
+      // console.log(userchoice);
+      myField.acceptingUserInput();
+
+    }
+    while (endGame === false);
+  }
   
  }
  
@@ -70,9 +82,10 @@ const myField = new Field([
   ['░', '^', '░'],
 ]);
 
-myField.print()
-myField.acceptingUserInput();
+// myField.print()
+// myField.acceptingUserInput();
 
-userChoice = prompt('Which way?');
-console.log(userChoice);
+// userChoice = prompt('Which way?');
+// console.log(userChoice);
 
+myField.winOrLose();
