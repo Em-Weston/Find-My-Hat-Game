@@ -17,6 +17,19 @@ class Field {
   constructor(theField){
     this.field = theField;
   }
+  static generateField(height, width){
+    let a = 0;
+    let b = 0;
+    let arrA = [];
+    let arrB = [];
+    for (a = 0; a <= width; a++){
+      for (b = 0; b <= height; b++) {
+        arrA.push(b);
+      }
+      arrB.push(arrA);
+    }
+    console.log(arrB);
+  }
   print() {
     for (let i=0; i<this.field.length; i++){
       // console.log(i);
@@ -103,4 +116,5 @@ const myField = new Field([
 // userChoice = prompt('Which way?');
 // console.log(userChoice);
 
-myField.winOrLose();
+// myField.winOrLose();
+Field.generateField(3, 2);
