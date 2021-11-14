@@ -12,23 +12,30 @@ let directionInput;
 let newPoint;
 let x = 0;
 let y = 0;
+let arrB = [];
+let arrA = [];
+let a = 0;
+let b = 0;
 
 class Field {
   constructor(theField){
     this.field = theField;
   }
   static generateField(height, width){
-    let a = 0;
-    let b = 0;
-    let arrA = [];
-    let arrB = [];
-    for (a = 0; a <= width; a++){
-      for (b = 0; b <= height; b++) {
-        arrA.push(b);
+    
+    for (a = 0; a <= height; a++){
+      for (b = 0; b <= width; b++) {
+        arrA.push(fieldCharacter);
       }
       arrB.push(arrA);
+      arrA = [];
     }
-    console.log(arrB);
+    var hatRowLocation = Math.floor(Math.random() * width);
+    var hatHeightLocation = Math.floor(Math.random() * height);
+    console.log(hatRowLocation, hatHeightLocation);
+    arrB[hatRowLocation][hatHeightLocation] = hat;
+    arrB[0][0] = pathCharacter;
+    console.log(arrB)
   }
   print() {
     for (let i=0; i<this.field.length; i++){

@@ -53,8 +53,13 @@ Project Status: *In Progress*
 
 As I work through my project, I will add my to-do's below: 
 * I need to fully test all fail results. If the user steps off the board in any direction, I need to add the functionality to result in a loose. 
-* I need a method to generate a random field. This is going to accept a height and width input.  
+* I have created a static method to be the board, I now need to randomly generate the fieldCharacters and holes. 
+* Also I can add some validation, so the hat can't generate on the path character. 
 
+fieldCharacter = ░
+hat = ^ 
+holes = 0
+pathCharacter = *
 
 
 If I come accross imporvements, or future updates, I will add them below: 
