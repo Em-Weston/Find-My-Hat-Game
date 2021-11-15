@@ -16,36 +16,49 @@ let arrB = [];
 let arrA = [];
 let a = 0;
 let b = 0;
-
+var arrItemTotal;
+let toPrint;
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)  ) + min;
+}
 class Field {
   constructor(theField){
     this.field = theField;
   }
-  static generateField(height, width){
-    
-    for (a = 0; a <= height; a++){
-      for (b = 0; b <= width; b++) {
+  static generateField(down, across){
+    // down and across 9 and 2;
+    for (a = 0; a <= down; a++){
+      for (b = 0; b <= across; b++) {
         arrA.push(fieldCharacter);
       }
       arrB.push(arrA);
       arrA = [];
     }
-    var arrItemTotal = (height * width) / 3;
-    console.log(arrItemTotal);
+    let totalDown = down +1;
+    let totalAcross = across +1;
+    arrItemTotal = (totalDown * totalAcross);
+    var ArrDivBy3 = arrItemTotal / 3;
+    // console.log(arrItemTotal);
     let i = 0;
-    while (i < arrItemTotal) {
-      let holeRowLocation = Math.floor(Math.random() * width);
-      let holeHeightLocation = Math.floor(Math.random() * height);
-      console.log(`iteration number: ${i}, rowlocation: ${holeRowLocation}, heightLocation: ${holeHeightLocation}`);
-      arrB[holeRowLocation][holeHeightLocation] = hole;
+    while (i <= ArrDivBy3) {
+     let newAcrossLocation = getRndInteger(0, across);
+      let newDownLocation = getRndInteger(0, down);
+      if (arrB[newDownLocation][newAcrossLocation] === hole){
+        let newAcrLoc = getRndInteger(0, across);
+        let newDowLoc = getRndInteger(0, down);
+        arrB[newDowLoc][newAcrLoc] = hole;
+      };
+      arrB[newDownLocation][newAcrossLocation] = hole;
       i++;
     }
-    var hatRowLocation = Math.floor(Math.random() * width);
-    var hatHeightLocation = Math.floor(Math.random() * height);
-    // console.log(hatRowLocation, hatHeightLocation);
-    arrB[hatRowLocation][hatHeightLocation] = hat;
+    var hatAcrossLocation = getRndInteger(0, across);
+    var hatDownLocation = getRndInteger(0, down);
+    if (hatDownLocation === 0 && hatAcrossLocation === 0) {
+      hatDownLocation = getRndInteger(0, down);
+    }
+    arrB[hatDownLocation][hatAcrossLocation] = hat;
     arrB[0][0] = pathCharacter;
-    console.log(arrB)
+    return arrB;
   }
   print() {
     for (let i=0; i<this.field.length; i++){
@@ -121,11 +134,11 @@ class Field {
  }
  
 
-const myField = new Field([
-  ['*', '░', 'O'],
-  ['░', 'O', '░'],
-  ['░', '^', '░'],
-]);
+// const myField = new Field([
+//   ['*', '░', 'O'],
+//   ['░', 'O', '░'],
+//   ['░', '^', '░'],
+// ]);
 
 // myField.print()
 // myField.acceptingUserInput();
@@ -134,4 +147,6 @@ const myField = new Field([
 // console.log(userChoice);
 
 // myField.winOrLose();
-Field.generateField(3, 2);
+// Field.generateField(3, 2);
+let myField = new Field(Field.generateField(5,3));
+myField.winOrLose();
