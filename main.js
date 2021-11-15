@@ -30,9 +30,19 @@ class Field {
       arrB.push(arrA);
       arrA = [];
     }
+    var arrItemTotal = (height * width) / 3;
+    console.log(arrItemTotal);
+    let i = 0;
+    while (i < arrItemTotal) {
+      let holeRowLocation = Math.floor(Math.random() * width);
+      let holeHeightLocation = Math.floor(Math.random() * height);
+      console.log(`iteration number: ${i}, rowlocation: ${holeRowLocation}, heightLocation: ${holeHeightLocation}`);
+      arrB[holeRowLocation][holeHeightLocation] = hole;
+      i++;
+    }
     var hatRowLocation = Math.floor(Math.random() * width);
     var hatHeightLocation = Math.floor(Math.random() * height);
-    console.log(hatRowLocation, hatHeightLocation);
+    // console.log(hatRowLocation, hatHeightLocation);
     arrB[hatRowLocation][hatHeightLocation] = hat;
     arrB[0][0] = pathCharacter;
     console.log(arrB)
