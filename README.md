@@ -34,7 +34,19 @@ For more information on this, please see this [link](https://www.codecademy.com/
 
 ## Illustrations
 
+This is full game play: 
 
+![The start of the game](resources/Screenshot-1.png "The start of the game")
+![First Move](resources/Screenshot-2.png "Users first Move")
+![Second Move](resources/Screenshot-3.png "Users second Move")
+![Third Move](resources/Screenshot-3.png "Users third Move")
+![Fourth Move](resources/Screenshot-4.png "Users fourth Move")
+![Fifth Move](resources/Screenshot-5.png "Users fifth Move")
+![final](resources/Screenshot-6.png "Congratulations")
+ 
+Some examples of other gameplay features: 
+
+![Fall Down hole](resources/Screenshot-of-fall.png "Example of losing a game via falling down a hole")
 
 ## How to play 
 
@@ -52,9 +64,8 @@ Once node is intalled on your computer, and the files are downloaded, you are re
 Project Status: *In Progress* 
 
 As I work through my project, I will add my to-do's below: 
-* I need to fully test all fail results. If the user steps off the board in any direction, I need to add the functionality to result in a loose. 
-* I have created a static method to be the board, I now need to randomly generate the fieldCharacters and holes. 
-* Also I can add some validation, so the hat can't generate on the path character. 
+* I need to fully test all fail and results. If the user steps off the board in any direction, I need to add the functionality for all circumstances to result in a lose/ win when appropriate.
+* Also I can add some validation, so the hat can't generate on the path character.  
 
 fieldCharacter = ░
 hat = ^ 

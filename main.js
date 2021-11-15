@@ -63,7 +63,7 @@ class Field {
   print() {
     for (let i=0; i<this.field.length; i++){
       // console.log(i);
-      console.log(this.field[i].join(''));
+      console.log(this.field[i].join(' '));
     }
   }
   acceptingUserInput() {
@@ -89,7 +89,7 @@ class Field {
         return endGame = true;
       }
     } else if (directionInput === 'l') {
-      console.log('You want to move left');
+      // console.log('You want to move left');
       y--;
       if (y <= -1) {
         console.log('Oops, you fell off the game field.');
@@ -107,9 +107,9 @@ class Field {
   }
   updateCurrentLocation() {
     let currentPosition = this.field[x][y];
-    console.log(`This is the current position of array item: ${currentPosition}`);
+    // console.log(`This is the current position of array item: ${currentPosition}`);
     if (currentPosition === fieldCharacter) {
-      console.log('This is a field character space');
+      // console.log('This is a field character space');
       return this.field[x][y] = pathCharacter;
     } else if (currentPosition === hole) {
       console.log('You fell down a hole!')
