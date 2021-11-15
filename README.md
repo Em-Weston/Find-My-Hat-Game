@@ -27,9 +27,9 @@ I will be testing my code in the terminal with the command:
 
 ## Setup 
 
-To run the game on your computer, you will need to have node.js installed. 
-You will need to have the command line on your own computer set up. 
-Node can be downloaded from the [Node website](https://nodejs.org/en/). 
+To run the game on your computer, you will need to have node.js installed.     
+You will need to have the command line on your own computer set up.     
+Node can be downloaded from the [Node website](https://nodejs.org/en/).     
 For more information on this, please see this [link](https://www.codecademy.com/articles/setting-up-node-locally) 
 
 ## Illustrations
@@ -37,9 +37,8 @@ For more information on this, please see this [link](https://www.codecademy.com/
 This is full game play: 
 
 ![The start of the game](resources/Screenshot-1.png "The start of the game")
-![First Move](resources/Screenshot-2.png "Users first Move")
-![Second Move](resources/Screenshot-3.png "Users second Move")
-![Third Move](resources/Screenshot-3.png "Users third Move")
+![First Move](resources/Screenshot-2.png "Users second Move")
+![Second Move](resources/Screenshot-3.png "Users third Move")
 ![Fourth Move](resources/Screenshot-4.png "Users fourth Move")
 ![Fifth Move](resources/Screenshot-5.png "Users fifth Move")
 ![final](resources/Screenshot-6.png "Congratulations")
@@ -51,12 +50,13 @@ Some examples of other gameplay features:
 ## How to play 
 
 Once node is intalled on your computer, and the files are downloaded, you are ready to play the game: 
-* Load the game with this command in the termial: `node /Find-My-Hat-Game/main.js`
+* Load the game with this command in the termial: `node /Find-My-Hat-Game/main.js`    
+You need to use the file path to the game, which will be unique to your computer. 
 * The game field will appear, and the question which way? 
 * You are the * character, in the top left hand corner. 
-* You need to direct yourself to the ^ hat. There will be only one hat on the screen, and it will be in a different location each time. 
+* You need to direct yourself to the ^ hat.    There will be only one hat on the screen, and it will be in a different location each time. 
 * The neutral background ░ is the field. 
-* The holes are represented with 0. If you land on a hole, you fall down it and the game is over. 
+* The holes are represented with 0.     If you land on a hole, you fall down it and the game is over. 
 * To direct yourself, when asked enter, `U` for up, `L` for left, `R` for right, `D` for down and `End` to end the game. 
 
 ## Project Status
@@ -73,8 +73,11 @@ holes = 0
 pathCharacter = *
 
 
-If I come accross imporvements, or future updates, I will add them below: 
-
+If I come accross improvements, or future updates, I will add them below: 
+* One update could be having the player character start at a random location on the board. 
+* Adding holes after a player has made a certain amount of moves. This would be interesting to create and could be like hard mode. 
+* I can improve the graphics in the terminal. This is something I haven't done before and I am interesed to see how creative I can make my game. 
+* Make a maze solver. So I can validate my fields before they get played. 
 
 
 ## Sources
