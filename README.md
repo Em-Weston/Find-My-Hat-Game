@@ -64,8 +64,8 @@ You need to use the file path to the game, which will be unique to your computer
 Project Status: *In Progress* 
 
 As I work through my project, I will add my to-do's below: 
-* I need to fully test all fail and results. If the user steps off the board in any direction, I need to add the functionality for all circumstances to result in a lose/ win when appropriate.
-* Also I can add some validation, so the hat can't generate on the path character.  
+* I can add some validation, so the hat can't generate on the path character.  
+* When the player moves downwards and off of the board, endgame is declared, but a type error is also thrown. This needs fixing. 
 
 fieldCharacter = ░
 hat = ^ 

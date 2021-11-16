@@ -18,6 +18,8 @@ let a = 0;
 let b = 0;
 var arrItemTotal;
 let toPrint;
+let totalAcross;
+let totalDown;
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)  ) + min;
 }
@@ -34,8 +36,8 @@ class Field {
       arrB.push(arrA);
       arrA = [];
     }
-    let totalDown = down +1;
-    let totalAcross = across +1;
+    totalDown = down +1;
+    totalAcross = across +1;
     arrItemTotal = (totalDown * totalAcross);
     var ArrDivBy3 = arrItemTotal / 3;
     // console.log(arrItemTotal);
@@ -74,12 +76,20 @@ class Field {
     // console.log(x, y);
     if(directionInput === 'd') {
       x++;
-      // console.log(x);
+      if (x === totalDown) {
+        console.log('You fell off the field! Game over!');
+        endGame = true; 
+      }
       newPoint = this.field[x][y];
       return newPoint, x, y;
     } else if (directionInput === 'r') {
       y++;
-      return x,y;
+      if (y === totalAcross) {
+        console.log('You fell off the board! Game over!'); 
+        endGame = true;
+      }
+      newPoint = this.field[x][y];
+      return newPoint, x, y;
     } else if (directionInput === 'u') {
       x--;
       // console.log(`x is: ${x}`);
@@ -88,6 +98,8 @@ class Field {
         console.log('Game over!')
         return endGame = true;
       }
+      newPoint = this.field[x][y];
+      return newPoint, x, y;
     } else if (directionInput === 'l') {
       // console.log('You want to move left');
       y--;
@@ -95,15 +107,18 @@ class Field {
         console.log('Oops, you fell off the game field.');
         console.log('Game over!')
         return endGame = true;
-      } else {
-        this.field[x][y] = pathCharacter;
-      }
+       } 
+       newPoint = this.field[x][y];
+      return newPoint, x, y;
+      //  else {
+      //   this.field[x][y] = pathCharacter;
+      // }
     } else if (directionInput === 'end') {
       console.log('Thanks for playing!');
       return endGame = true;
     } else {
       console.log('That is not a valid command. Choose U,D,L,R or End.');
-    }
+    } 
   }
   updateCurrentLocation() {
     let currentPosition = this.field[x][y];
